@@ -1,0 +1,18 @@
+button{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 102, 0);
+    border:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /**used to position the button to the left corner since it's relative to
+    the App component(i.e the app component as an element 'main' with 'position:relative')**/
+    top:10px;
+    right: 40px;
+}
+
+button img{
+    width: 100%;
+
+}

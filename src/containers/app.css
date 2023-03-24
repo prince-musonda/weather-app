@@ -1,0 +1,24 @@
+main{
+    width: 80%;
+    height: 80%;
+    background-size:contain;
+    display: flex;
+   justify-content: space-between;
+   position: relative; /*This together with the z-index will used to create model or an
+   overLay/backdrop behind the App component
+   */
+   z-index: 1;
+
+}
+
+.backdrop{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.688);;
+    margin:0;
+    
+
+}

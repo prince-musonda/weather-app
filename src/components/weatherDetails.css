@@ -1,0 +1,17 @@
+.weather-details-section{
+    max-height: 10rem;
+    overflow-y: auto;
+}
+.weather-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: max-content;
+    justify-items: start;
+    align-items: center;
+
+}
+
+.values{
+    color:white;
+    justify-self: end;
+}

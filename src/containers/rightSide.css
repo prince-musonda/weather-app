@@ -1,0 +1,14 @@
+.main-container{
+    width: 40%;
+    background:rgba(54, 53, 53, 0.888);
+    height: 100%;
+    padding: 2.3rem;
+    overflow-y: auto;
+
+}
+
+.search-button{
+    position: absolute;
+    top:0;
+}
+
