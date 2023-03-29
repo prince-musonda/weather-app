@@ -10,8 +10,17 @@
     align-items: center;
 
 }
-
+.weather-details li{
+    color: rgba(255, 255, 255, 0.827);
+    padding:1rem
+}
 .values{
     color:white;
     justify-self: end;
+}
+@media  only screen and (min-height: 500px) {
+    .weather-details-section{
+        max-height: 25rem;
+        overflow-y: auto;
+    }
 }

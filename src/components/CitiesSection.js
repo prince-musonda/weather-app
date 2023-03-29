@@ -1,9 +1,11 @@
-import React,{Fragment,useState} from "react";
+import React,{Fragment,useContext,useState} from "react";
+import { AppContext } from "../containers/App";
 import './citiesSection.css'
 
-function CitiesSection(props){
-    const citiesArray = props.cities.map(city =>{
-        return <li>{city}</li>}
+function CitiesSection(){
+    const {cities} = useContext(AppContext) 
+    const citiesArray = cities.map((city,index) =>{
+        return <li key={city+index}>{city}</li>}
     )
     return(
         <section className="cities-section">

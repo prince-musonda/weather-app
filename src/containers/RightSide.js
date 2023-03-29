@@ -1,22 +1,19 @@
 import React from 'react'
 import './rightSide.css'
-import SearchBox from '../components/SearchBox'
-import SearchButton from '../components/SearchButton'
 import CitiesSection from '../components/CitiesSection'
 import WeatherDetails from '../components/WeatherDetails'
+import SearchComponents from '../components/SearchComponents'
 
 function RightSide(){
-    const cities = ['Birmingham','Manchester','New York','California']
-    
+
     return(
         <div className='main-container'>
             <section className='top-right'>
-                <SearchBox className='search-box'/>
-                <SearchButton className='search-box'/>
+                <SearchComponents/>
             </section>
-                <CitiesSection cities={['Birmingham','Manchester','New York','California']}/>
+                <CitiesSection/>
           
-            <WeatherDetails humidityValue = '30mm' cloudyValue = '10%' windValue = '10km/h'/>
+            <WeatherDetails/>
         </div>
     )
 }
