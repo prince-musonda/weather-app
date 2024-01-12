@@ -30,15 +30,15 @@ function App(){
         return {longitude,latitude}
     }
 
-    async function getLocationKey(location){
-        // each location has a key based on the accuweather api that
+    async function getLocationId(location){
+        // each location has a ID based on the accuweather api that
         // we are using. so in order to get the curent weather conditions
-        // we need to provide a Location key(i.e a number referencing a location).
+        // we need to provide a Location id(i.e a number referencing a location).
         // And we can get this using longitude and latitude coordinates
         const {latitude,longitude} =  await getCoordinates(location);
         const locationObj = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=IsGqdtVFYNtGwkhp52AB9gtZRoEjzO17&q=${latitude}%2C${longitude}`);
-        const locationKey = locationObj.data.Key
-        return locationKey
+        const locationId = locationObj.data.results[0].id
+        return locationId
     }
 
     async function getTimezone(location){
@@ -72,9 +72,9 @@ function App(){
         
         try{
             //fetching current weather conditions of specified location key
-            const locationKey = await getLocationKey(location)
+            const locationId = await getLocationId(location)
             const currentTime = await getCurrentDateTime(location)
-            const res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=IsGqdtVFYNtGwkhp52AB9gtZRoEjzO17&details=true`);
+            const res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationId}?apikey=IsGqdtVFYNtGwkhp52AB9gtZRoEjzO17&details=true`);
             setIsLoading(false) // hide loading animation
             const weatherData = res.data[0]
             
